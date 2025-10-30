@@ -1,7 +1,39 @@
+import React from "react";
+import Botao from "./Botao";
+
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <section
+      className="w-full h-screen bg-cover bg-center bg-no-repeat flex flex-col items-center justify-end relative"
+      style={{ backgroundImage: "url('/Banner.png')" }}
+    >
+      {/* Overlay escuro para contraste */}
+      <div className="absolute inset-0 bg-black/40"></div>
 
-export default Home
+      {/* Container dos botões */}
+      <div className="relative z-10 w-full pb-20 px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="flex justify-center items-center p-4">
+            <Botao texto="Nossos Produtos" href="./Portifolio.jsx" />
+          </div>
+
+          <div className="flex justify-center items-center p-4">
+            <Botao texto="Sobre Nós" href="./Sobre.jsx" />
+          </div>
+
+          <div className="flex justify-center items-center p-4">
+            <Botao texto="Cadastre-se" href="./Login.jsx" />
+          </div>
+
+          <div className="flex justify-center items-center p-4">
+            <Botao texto="Contate-nos" href="./Contato.jsx" />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Home;
+
+
