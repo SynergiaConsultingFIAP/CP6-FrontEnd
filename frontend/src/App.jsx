@@ -3,6 +3,7 @@ import Login from "./components/Login"
 import Sobre from "./components/Sobre"
 import Portifolio from "./components/Portifolio"
 import Contato from "./components/Contato"
+import Footer from "./components/Footer"
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <Sobre />
       <Portifolio />
       <Contato />
+      <Footer />
     </>
   )
 }

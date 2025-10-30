@@ -1,6 +1,6 @@
 const Contato = () => {
   return (
-    <section className="min-h-screen bg-gradient-to-b from-[#f6f1e7] to-[#e9dcc5] text-gray-800 py-16 px-6 flex flex-col items-center">
+    <section id="contato" className="min-h-screen bg-gradient-to-b from-[#f6f1e7] to-[#e9dcc5] text-gray-800 py-16 px-6 flex flex-col items-center">
       <div className="max-w-2xl text-center">
         <h2 className="text-4xl font-bold text-amber-800 mb-4 uppercase tracking-wide">
           Entre em Contato

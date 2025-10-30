@@ -14,19 +14,19 @@ const Home = () => {
       <div className="relative z-10 w-full pb-20 px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           <div className="flex justify-center items-center p-4">
-            <Botao texto="Nossos Produtos" href="./Portifolio.jsx" />
+            <Botao texto="Nossos Produtos" href="#portifolio" />
           </div>
 
           <div className="flex justify-center items-center p-4">
-            <Botao texto="Sobre Nós" href="./Sobre.jsx" />
+            <Botao texto="Sobre Nós" href="#sobre" />
           </div>
 
           <div className="flex justify-center items-center p-4">
-            <Botao texto="Cadastre-se" href="./Login.jsx" />
+            <Botao texto="Cadastre-se" href="#login" />
           </div>
 
           <div className="flex justify-center items-center p-4">
-            <Botao texto="Contate-nos" href="./Contato.jsx" />
+            <Botao texto="Contate-nos" href="#contato" />
           </div>
         </div>
       </div>

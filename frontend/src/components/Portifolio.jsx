@@ -1,7 +1,74 @@
+import Aurora from "../assets/Aurora.png";
+import Celeste from "../assets/Celeste.png";
+import Nocture from "../assets/Nocture.png";
+import Regalis from "../assets/Regalis.png";
+import Solstice from "../assets/Solstice.png";
+import Veridan from "../assets/Veridan.png";
+
+const whiskies = [
+  {
+    nome: "Aurora",
+    imagem: Aurora,
+    descricao: "Notas suaves de baunilha e caramelo, final elegante e persistente.",
+  },
+  {
+    nome: "Celeste",
+    imagem: Celeste,
+    descricao: "Blend refinado com aroma floral e toque amadeirado marcante.",
+  },
+  {
+    nome: "Nocture",
+    imagem: Nocture,
+    descricao: "Whisky encorpado com notas de cacau e especiarias, ideal para noites frias.",
+  },
+  {
+    nome: "Regalis",
+    imagem: Regalis,
+    descricao: "Sabor nobre e equilibrado, com final levemente defumado.",
+  },
+  {
+    nome: "Solstice",
+    imagem: Solstice,
+    descricao: "Combina frescor cítrico com fundo adocicado de mel e frutas secas.",
+  },
+  {
+    nome: "Veridan",
+    imagem: Veridan,
+    descricao: "Whisky de coloração âmbar e sabor herbal único, perfeito para degustadores exigentes.",
+  },
+];
+
 const Portifolio = () => {
   return (
-    <div>Portifolio</div>
-  )
-}
+    <section
+      id="portifolio"
+      className="min-h-screen bg-gradient-to-b from-amber-900 via-amber-800 to-amber-700 py-16 text-center text-neutral-100"
+    >
+      <h1 className="text-4xl md:text-5xl font-serif mb-12 tracking-wide">
+        Nossos Whiskies
+      </h1>
 
-export default Portifolio
+      <div className="grid gap-8 px-6 md:px-20 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        {whiskies.map((whisky, index) => (
+          <div
+            key={index}
+            className="bg-amber-950 bg-opacity-40 backdrop-blur-md rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-amber-800"
+          >
+            <img
+              src={whisky.imagem}
+              alt={whisky.nome}
+              className="w-full h-64 object-cover rounded-xl mb-4"
+            />
+            <h2 className="text-2xl font-semibold mb-2">{whisky.nome}</h2>
+            <p className="text-sm text-amber-200 mb-4">{whisky.descricao}</p>
+            <button className="bg-amber-600 hover:bg-amber-700 text-white font-medium py-2 px-6 rounded-full transition-all duration-300">
+              Comprar
+            </button>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Portifolio;
