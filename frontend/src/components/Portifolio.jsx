@@ -10,31 +10,37 @@ const whiskies = [
     nome: "Aurora",
     imagem: Aurora,
     descricao: "Notas suaves de baunilha e caramelo, final elegante e persistente.",
+    preco: "R$ 1500,00",
   },
   {
     nome: "Celeste",
     imagem: Celeste,
     descricao: "Blend refinado com aroma floral e toque amadeirado marcante.",
+    preco: "R$ 100,00",
   },
   {
     nome: "Nocture",
     imagem: Nocture,
     descricao: "Whisky encorpado com notas de cacau e especiarias, ideal para noites frias.",
+    preco: "R$ 150,00",
   },
   {
     nome: "Regalis",
     imagem: Regalis,
     descricao: "Sabor nobre e equilibrado, com final levemente defumado.",
+    preco: "R$ 200,00",
   },
   {
     nome: "Solstice",
     imagem: Solstice,
     descricao: "Combina frescor cítrico com fundo adocicado de mel e frutas secas.",
+    preco: "R$ 300,00",
   },
   {
     nome: "Veridan",
     imagem: Veridan,
     descricao: "Whisky de coloração âmbar e sabor herbal único, perfeito para degustadores exigentes.",
+    preco: "R$ 400,00",
   },
 ];
 
@@ -61,6 +67,7 @@ const Portifolio = () => {
             />
             <h2 className="text-2xl font-semibold mb-2">{whisky.nome}</h2>
             <p className="text-sm text-amber-200 mb-4">{whisky.descricao}</p>
+            <p className="text-sm text-amber-200 mb-4">{whisky.preco}</p>
             <button className="bg-amber-600 hover:bg-amber-700 text-white font-medium py-2 px-6 rounded-full transition-all duration-300">
               Comprar
             </button>
