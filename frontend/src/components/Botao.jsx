@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Botao({ texto, href }) {
   return (
     <a

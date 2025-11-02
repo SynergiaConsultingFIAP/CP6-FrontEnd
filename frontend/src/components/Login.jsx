@@ -7,122 +7,77 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Login:", { email, password });
+    console.log("Login:", { email, password, name });
   };
 
   return (
-    <section id="login">
-      <div
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
-        style={{
-          backgroundColor: "#1a0c02",
-          backgroundImage:
-            "radial-gradient(circle at 30% 50%, rgba(255, 170, 70, 0.15), transparent 60%), radial-gradient(circle at 80% 20%, rgba(255, 100, 0, 0.1), transparent 70%)",
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-900/20 via-transparent to-amber-700/20 animate-pulse-slow mix-blend-overlay"></div>
-        <div className="absolute inset-0 overflow-hidden">
-          {[...Array(10)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-3 h-3 bg-amber-500/20 rounded-full blur-sm animate-bubble"
-              style={{
-                left: `${Math.random() * 100}%`,
-                animationDelay: `${i * 1.5}s`,
-                animationDuration: `${6 + Math.random() * 5}s`,
-              }}
-            ></div>
-          ))}
-        </div>
-        <div className="relative w-full max-w-md bg-black border border-amber-700 rounded-xl shadow-2xl p-8 backdrop-blur-md">
-          <h2 className="text-center text-3xl font-bold text-amber-800 mb-8 uppercase tracking-wide drop-shadow-[0_0_8px_rgba(255,191,73,0.3)]">
+    <section
+      id="login"
+      className="flex items-center justify-center min-h-screen bg-gradient-to-b from-[#f3e7d3] to-[#e3d2b6] p-4">
+      <div className="w-full max-w-5xl bg-[#f7f0dc] border border-[#b87436] rounded-xl shadow-[0_10px_30px_rgba(156,96,56,0.25)] p-10 flex flex-col items-center text-[#7b3f1b]">
+        <div className="max-w-2xl text-center mb-10">
+          <h1 className="text-4xl font-bold uppercase tracking-wide mb-4">
             Login
-          </h2>
-
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label className="block text-amber-700 font-medium mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                className="w-full px-4 py-2 bg-amber-800 border border-amber-600/50 rounded-md text-white focus:outline-none focus:border-amber-400 placeholder-amber-200/40"
-                placeholder="Digite seu email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block text-amber-700 font-medium mb-2">
-                Senha
-              </label>
-              <input
-                type="password"
-                className="w-full px-4 py-2 bg-amber-800 border border-amber-600/50 rounded-md text-white focus:outline-none focus:border-amber-400 placeholder-amber-200/40"
-                placeholder="Digite sua senha"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block text-amber-700 font-medium mb-2">
-                Nome
-              </label>
-              <input
-                type="text"
-                className="w-full px-4 py-2 bg-amber-800 border border-amber-600/50 rounded-md text-white focus:outline-none focus:border-amber-400 placeholder-amber-200/40"
-                placeholder="Digite seu nome completo"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-            </div>
-
+          </h1>
+          <p className="text-lg leading-relaxed text-[#7b3f1b]/90">
+            Ao se cadastrar em{" "}
+            <span className="text-[#b87436] font-semibold">The Barrel Room</span>, 
+            você garante <span className="text-[#b87436] font-medium">descontos exclusivos</span>,{" "}
+            <span className="text-[#b87436] font-medium">entrega gratuita</span> e{" "}
+            <span className="text-[#b87436] font-medium">envio prioritário</span>.
+            <br />
+            <span className="italic text-[#7b3f1b]/80">
+              Experimente o sabor do privilégio.
+            </span>
+          </p>
+        </div>
+        <form
+          onSubmit={handleSubmit}
+          className="w-full max-w-lg text-left space-y-6"
+        >
+          <div>
+            <label className="block text-[#7b3f1b] font-medium mb-2">Email</label>
+            <input
+              type="email"
+              className="w-full px-4 py-2 bg-[#5a2e1f] border border-[#7b3f1b]/50 rounded-md text-[#f7e7cc] focus:outline-none focus:border-[#d88a43] placeholder-[#e1b97f]/60 shadow-inner"
+              placeholder="Digite seu email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label className="block text-[#7b3f1b] font-medium mb-2">Senha</label>
+            <input
+              type="password"
+              className="w-full px-4 py-2 bg-[#5a2e1f] border border-[#7b3f1b]/50 rounded-md text-[#f7e7cc] focus:outline-none focus:border-[#d88a43] placeholder-[#e1b97f]/60 shadow-inner"
+              placeholder="Digite sua senha"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label className="block text-[#7b3f1b] font-medium mb-2">Nome</label>
+            <input
+              type="text"
+              className="w-full px-4 py-2 bg-[#5a2e1f] border border-[#7b3f1b]/50 rounded-md text-[#f7e7cc] focus:outline-none focus:border-[#d88a43] placeholder-[#e1b97f]/60 shadow-inner"
+              placeholder="Digite seu nome completo"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
+          <div className="pt-6 flex justify-end">
             <button
               type="submit"
-              className="w-full py-2 bg-amber-700 hover:bg-amber-500 text-black font-bold rounded-md transition-all duration-200 shadow-lg hover:shadow-amber-600/50"
+              className="px-10 py-2 bg-[#b87436] hover:bg-[#d88a43] text-[#2a1306] font-bold rounded-md transition-all duration-200 shadow-[0_4px_10px_rgba(0,0,0,0.25)] hover:shadow-[0_4px_15px_rgba(216,138,67,0.6)]"
             >
               Cadastrar
             </button>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
-      <style jsx>{`
-        @keyframes bubble {
-          0% {
-            transform: translateY(100vh) scale(0.6);
-            opacity: 0;
-          }
-          50% {
-            opacity: 0.4;
-          }
-          100% {
-            transform: translateY(-10vh) scale(1);
-            opacity: 0;
-          }
-        }
-        .animate-bubble {
-          animation-name: bubble;
-          animation-iteration-count: infinite;
-          animation-timing-function: ease-in-out;
-        }
-
-        @keyframes pulse-slow {
-          0%, 100% {
-            opacity: 0.3;
-          }
-          50% {
-            opacity: 0.6;
-          }
-        }
-        .animate-pulse-slow {
-          animation: pulse-slow 6s ease-in-out infinite;
-        }
-      `}</style>
     </section>
   );
 };

@@ -58,7 +58,7 @@ const Portifolio = () => {
         {whiskies.map((whisky, index) => (
           <div
             key={index}
-            className="bg-amber-950 bg-opacity-40 backdrop-blur-md rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-amber-800"
+            className="bg-gradient-to-b from-amber-950 to-amber-900 bg-opacity-40 backdrop-blur-md rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-amber-800"
           >
             <img
               src={whisky.imagem}
