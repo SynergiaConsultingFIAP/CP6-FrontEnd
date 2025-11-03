@@ -72,7 +72,7 @@ const Portifolio = () => {
   const whiskiesFiltrados = filtrarWhiskies();
 
   const handleCompra = (nomeWhisky) => {
-    alert(`Compra de ${nomeWhisky} concluída com sucesso! 🥃`);
+    alert(`Compra de ${nomeWhisky} concluída com sucesso! `);
   };
 
   return (
