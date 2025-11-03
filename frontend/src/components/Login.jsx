@@ -4,25 +4,37 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Login:", { email, password, name });
+
+    setSuccess(true);
+    setEmail("");
+    setPassword("");
+    setName("");
+    setTimeout(() => setSuccess(false), 3000);
   };
 
   return (
     <section
       id="login"
-      className="flex items-center justify-center min-h-screen bg-gradient-to-b from-[#f3e7d3] to-[#e3d2b6] p-4">
-      <div className="w-full max-w-5xl bg-[#f7f0dc] border border-[#b87436] rounded-xl shadow-[0_10px_30px_rgba(156,96,56,0.25)] p-10 flex flex-col items-center text-[#7b3f1b]">
+      className="flex items-center justify-center min-h-screen bg-gradient-to-b from-[#f3e7d3] to-[#e3d2b6] p-4"
+    >
+      <div className="w-full max-w-5xl bg-[#f7f0dc] border border-[#b87436] rounded-xl shadow-[0_10px_30px_rgba(156,96,56,0.25)] p-10 flex flex-col items-center text-[#7b3f1b] relative">
         <div className="max-w-2xl text-center mb-10">
           <h1 className="text-4xl font-bold uppercase tracking-wide mb-4">
             Login
           </h1>
           <p className="text-lg leading-relaxed text-[#7b3f1b]/90">
             Ao se cadastrar em{" "}
-            <span className="text-[#b87436] font-semibold">The Barrel Room</span>, 
-            você garante <span className="text-[#b87436] font-medium">descontos exclusivos</span>,{" "}
+            <span className="text-[#b87436] font-semibold">The Barrel Room</span>
+            , você garante{" "}
+            <span className="text-[#b87436] font-medium">
+              descontos exclusivos
+            </span>
+            ,{" "}
             <span className="text-[#b87436] font-medium">entrega gratuita</span> e{" "}
             <span className="text-[#b87436] font-medium">envio prioritário</span>.
             <br />
@@ -31,6 +43,7 @@ const Login = () => {
             </span>
           </p>
         </div>
+
         <form
           onSubmit={handleSubmit}
           className="w-full max-w-lg text-left space-y-6"
@@ -46,6 +59,7 @@ const Login = () => {
               required
             />
           </div>
+
           <div>
             <label className="block text-[#7b3f1b] font-medium mb-2">Senha</label>
             <input
@@ -57,6 +71,7 @@ const Login = () => {
               required
             />
           </div>
+
           <div>
             <label className="block text-[#7b3f1b] font-medium mb-2">Nome</label>
             <input
@@ -68,6 +83,7 @@ const Login = () => {
               required
             />
           </div>
+
           <div className="pt-6 flex justify-end">
             <button
               type="submit"
@@ -77,6 +93,12 @@ const Login = () => {
             </button>
           </div>
         </form>
+
+        {success && (
+          <div className="absolute bottom-5 text-center bg-[#b87436] text-[#f7f0dc] font-semibold py-2 px-6 rounded-md shadow-lg transition-opacity duration-500">
+            ✅ Cadastro concluído com sucesso!
+          </div>
+        )}
       </div>
     </section>
   );

@@ -71,6 +71,10 @@ const Portifolio = () => {
 
   const whiskiesFiltrados = filtrarWhiskies();
 
+  const handleCompra = (nomeWhisky) => {
+    alert(`Compra de ${nomeWhisky} concluída com sucesso! 🥃`);
+  };
+
   return (
     <section
       id="portifolio"
@@ -126,7 +130,10 @@ const Portifolio = () => {
               <h2 className="text-2xl font-semibold mb-2">{whisky.nome}</h2>
               <p className="text-sm text-amber-200 mb-4">{whisky.descricao}</p>
               <p className="text-sm text-amber-200 mb-4">{whisky.preco}</p>
-              <button className="bg-amber-600 hover:bg-amber-700 text-white font-medium py-2 px-6 rounded-full transition-all duration-300">
+              <button
+                onClick={() => handleCompra(whisky.nome)}
+                className="bg-amber-600 hover:bg-amber-700 text-white font-medium py-2 px-6 rounded-full transition-all duration-300"
+              >
                 Comprar
               </button>
             </div>
